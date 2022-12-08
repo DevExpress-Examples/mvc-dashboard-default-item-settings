@@ -1,0 +1,37 @@
+<script>
+    function onBeforeRender(sender) {
+        var dashboardControl = sender.GetDashboardControl();
+
+        // Handle item collection changing
+        dashboardControl.dashboard.subscribe(dashboard => {
+            dashboard.items.subscribe(changes => {
+                changes.forEach(arg => {
+                    var item = arg.value;
+
+                    if (arg.status === "added") {
+                        // Enable "Local Color Scheme":
+                        item.coloringOptions && item.coloringOptions.useGlobalColors(false);
+
+                        // Change an item's caption:
+                        item.name(item.name() + " - Custom Name");
+
+                        // Apply a filter only to Chart items:
+                        if (item instanceof DevExpress.Dashboard.Model.ChartItem) {
+                            item.filterString("[Category] = 'Beverages'");
+                        }
+                    }
+                    else if (arg.status === "deleted") {
+                        alert("Removing " + item.name());
+                    }
+                });
+            }, null, "arrayChange");
+        });
+    }
+</script>
+
+@Html.DevExpress().Dashboard(settings => {
+    settings.Name = "Dashboard";
+    settings.ControllerName = "DefaultDashboard";
+    settings.Height = Unit.Percentage(100);
+    settings.ClientSideEvents.BeforeRender = "onBeforeRender";
+}).GetHtml()
