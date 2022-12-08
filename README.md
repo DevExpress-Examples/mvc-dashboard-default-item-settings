@@ -1,3 +1,7 @@
+<!-- default badges list -->
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/575863040/22.1.6%2B)
+[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+<!-- default badges end -->
 # Dashboard for MVC - How to apply the default settings to the newly added items
 
 This example demonstrates how to subscribe to the [dashboard.items](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Model.Dashboard#js_devexpress_dashboard_model_dashboard_items) collection changes to track the moments when new items are added or exiting items are deleted. This allows us to change the default item configuration using the [Dashboard Model API](https://docs.devexpress.com/Dashboard/402482/web-dashboard/ui-elements-and-customization/dashboard-model).
