@@ -13,7 +13,7 @@ This example applies the following settings to the dashboard items:
 * Limits chart's display data.
 * Invokes a notification dialog when you remove the existing item.
 
-The image below shows the added chart item with the custom "Chart 1 - Custom Name" caption that displays sales of Beverages category only.
+The image below shows the added chart item with the custom "Chart 1 - Custom Name" caption that displays sales of the Beverages category only.
 
 ![Dashboard](images/dashboard.png)
 
