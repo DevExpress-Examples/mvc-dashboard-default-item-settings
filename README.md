@@ -17,7 +17,7 @@ The image below shows the added chart item with the custom "Chart 1 - Custom Nam
 
 ![Dashboard](images/dashboard.png)
 
-## Files to Look at
+## Files to Review
 
 * [Index.cshtml](./CS/Views//Home/Index.cshtml)
 
