@@ -10,7 +10,7 @@ This example demonstrates how to subscribe to the [dashboard.items](https://docs
 This example applies the following settings to the dashboard items:
 
 * Adds custom name for the newly added items.
-* Limits Chart's display data.
+* Limits chart's display data.
 * Invokes a notification dialog when you remove the existing item.
 
 The image below shows the added chart item with the custom "Chart 1 - Custom Name" caption that displays sales of Beverages category only.
