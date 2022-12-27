@@ -19,6 +19,18 @@
                         if (item instanceof DevExpress.Dashboard.Model.ChartItem) {
                             item.filterString("[Category] = 'Beverages'");
                         }
+
+                        // Handle data item collection changing
+                        item.dataItems.subscribe(changes => {
+                            changes.forEach(arg => {
+                                var dataItem = arg;
+
+                                // Change dimension's dateTimeGroupInterval
+                                if (dataItem instanceof DevExpress.Dashboard.Model.Dimension) {
+                                    dataItem.dateTimeGroupInterval('DayMonthYear');
+                                }
+                            });
+                        });
                     }
                     else if (arg.status === "deleted") {
                         alert("Removing " + item.name());

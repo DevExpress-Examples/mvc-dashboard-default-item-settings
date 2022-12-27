@@ -3,7 +3,7 @@
   <Title Text="New Dashboard" />
   <DataSources>
     <ObjectDataSource Name="ObjectDataSource" ComponentName="objectDataSource1" DataId="odsSales">
-      <DataSource Type="ProductSales, MVCDashboardDefaultSettings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <DataSource Type="ProductSales, MVCDashboardDefaultSettings, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <DataMember>GetProductSales</DataMember>
     </ObjectDataSource>
   </DataSources>
@@ -34,11 +34,38 @@
         </GridMeasureColumn>
       </GridColumns>
       <GridOptions />
+      <ColumnFilterOptions />
     </Grid>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1 - Custom Name" DataSource="objectDataSource1" FilterString="[Category] = 'Beverages'">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Dimension DataMember="Category" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+        <Measure DataMember="Sales" DefaultId="DataItem1" />
+        <Dimension DataMember="OrderDate" DefaultId="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
   </Items>
   <LayoutTree>
     <LayoutGroup>
-      <LayoutItem DashboardItem="gridDashboardItem1" />
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="gridDashboardItem1" />
+        <LayoutItem DashboardItem="chartDashboardItem1" />
+      </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>
 </Dashboard>

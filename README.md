@@ -7,10 +7,12 @@
 
 This example demonstrates how to subscribe to the [dashboard.items](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Model.Dashboard#js_devexpress_dashboard_model_dashboard_items) collection changes to track when new items are added or existing items are removed. This allows you to change the default item configuration with the [Dashboard Model API](https://docs.devexpress.com/Dashboard/402482/web-dashboard/ui-elements-and-customization/dashboard-model).
 
-This example applies the following settings to the dashboard items:
+This example applies the following settings to the newly added dashboard items:
 
-* Adds custom name for the newly added items.
+* Assigns "Local Color Scheme".
+* Adds custom name.
 * Limits chart's display data.
+* Assigns a custom [dateTimeGroupInterval](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Model.Dimension#js_devexpress_dashboard_model_dimension_datetimegroupinterval) for the newly added dimensions.
 * Invokes a notification dialog when you remove the existing item.
 
 The image below shows the added chart item with the custom "Chart 1 - Custom Name" caption that displays sales of the Beverages category only.
